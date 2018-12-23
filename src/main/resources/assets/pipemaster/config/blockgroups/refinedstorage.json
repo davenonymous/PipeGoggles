@@ -1,0 +1,22 @@
+{
+  "id": "refinedstorage",
+  "mod": "refinedstorage",
+
+  "itemIcon": {
+    "name": "refinedstorage:controller",
+    "meta": 1
+  },
+
+  "translationKey": "itemGroup.refinedstorage",
+
+  "blocks": [
+    "refinedstorage:cable",
+    "refinedstorage:importer",
+    "refinedstorage:exporter",
+    "refinedstorage:external_storage",
+    "refinedstorage:constructor",
+    "refinedstorage:destructor",
+    "refinedstorage:reader",
+    "refinedstorage:writer"
+  ]
+}

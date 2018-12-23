@@ -1,0 +1,16 @@
+[
+{
+  "modid": "pipemaster",
+  "name": "Pipe Master 2000",
+  "description": "See pipes and plumbing through walls!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ['Davenonymous'],
+  "credits": "Davenonymous",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

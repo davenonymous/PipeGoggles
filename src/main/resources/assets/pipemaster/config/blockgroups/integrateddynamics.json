@@ -1,0 +1,11 @@
+{
+  "id": "integrateddynamics",
+  "mod": "integrateddynamics",
+
+  "itemIcon": "integrateddynamics:variable",
+  "translationKey": "itemGroup.integrateddynamics",
+
+  "blocks": [
+    "integrateddynamics:cable"
+  ]
+}

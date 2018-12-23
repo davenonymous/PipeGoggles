@@ -1,0 +1,11 @@
+{
+  "id": "enderio",
+  "mod": "enderio",
+
+  "itemIcon": "enderio:item_item_conduit",
+  "translationKey": "itemGroup.enderio.conduits",
+
+  "blocks": [
+    "enderio:block_conduit_bundle"
+  ]
+}

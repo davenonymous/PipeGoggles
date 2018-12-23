@@ -1,0 +1,21 @@
+{
+  "id": "thermaldynamics",
+  "mod": "thermaldynamics",
+
+  "itemIcon": {
+    "name": "thermaldynamics:duct_0",
+    "meta": 5
+  },
+
+  "translationKey": "itemGroup.thermaldynamics.creativeTab",
+
+  "blocks": [
+    "thermaldynamics:duct_0",
+    "thermaldynamics:duct_16",
+    "thermaldynamics:duct_32",
+    "thermaldynamics:duct_48",
+    "thermaldynamics:duct_64"
+  ],
+
+  "optimizationStrategy": "SKIP_DUPLICATE_LINES"
+}

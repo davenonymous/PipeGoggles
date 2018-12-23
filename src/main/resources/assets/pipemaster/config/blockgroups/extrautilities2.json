@@ -1,0 +1,13 @@
+{
+  "id": "extrautils2",
+  "mod": "extrautils2",
+
+  "itemIcon": "extrautils2:grocket",
+  "translationKey": "itemgroup.extrautils2",
+
+  "blocks": [
+    "extrautils2:transferholder",
+    "extrautils2:pipe",
+    "extrautils2:powertransmitter"
+  ]
+}
