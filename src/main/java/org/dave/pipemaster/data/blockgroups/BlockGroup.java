@@ -4,19 +4,19 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
 import org.dave.pipemaster.items.goggles.EnumBoxOptimizationStrategy;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class BlockGroup {
     private String id;
     private ItemStack itemIcon;
     private String translationKey;
-    private List<IBlockState> validStates;
+    private HashSet<IBlockState> validStates;
     private EnumBoxOptimizationStrategy optimizationStrategy;
 
     public BlockGroup(String id) {
         this.id = id;
-        this.validStates = new ArrayList<>();
+        this.validStates = new HashSet<>();
         this.optimizationStrategy = EnumBoxOptimizationStrategy.REMOVE_DUPLICATE_LINES;
     }
 

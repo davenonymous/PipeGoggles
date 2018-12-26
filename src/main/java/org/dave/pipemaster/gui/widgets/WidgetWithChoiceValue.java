@@ -28,6 +28,12 @@ public class WidgetWithChoiceValue<T> extends Widget {
         }
     }
 
+    public void addChoiceFromArray(T[] newChoices) {
+        for(T newChoice : newChoices) {
+            this.choices.add(newChoice);
+        }
+    }
+
     public void addChoice(Collection<T> newChoices) {
         this.choices.addAll(newChoices);
     }

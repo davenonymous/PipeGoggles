@@ -49,14 +49,14 @@ public class BoxOptimizer {
         }
 
         WorldTools.foreachBlockBetween(min, max, (BlockPos pos) -> {
-            if (player.world.isAirBlock(pos)) {
+            if (world.isAirBlock(pos)) {
                 return;
             }
 
-            IBlockState state = player.world.getBlockState(pos);
+            IBlockState state = world.getBlockState(pos);
             if (group.containsBlockState(state)) {
                 List<AxisAlignedBB> boxes = new ArrayList<>();
-                player.world.getBlockState(pos).addCollisionBoxToList(player.world, pos, new AxisAlignedBB(pos), boxes, null, false);
+                world.getBlockState(pos).addCollisionBoxToList(world, pos, new AxisAlignedBB(pos), boxes, null, false);
                 boxes.forEach(box -> this.addBox(box));
             }
         });
@@ -66,28 +66,19 @@ public class BoxOptimizer {
     }
 
     public void render(EntityPlayer player, float partialTicks) {
-        //Logz.info("Rendering lines: %d", this.lines.size());
         BoxRenderer.renderLines(player, partialTicks, color, this.lines);
     }
 
     public void addBox(AxisAlignedBB box) {
-        double precision = 1000000000d;
-        double maxX = (double)Math.round(box.maxX * precision) / precision;
-        double maxY = (double)Math.round(box.maxY * precision) / precision;
-        double maxZ = (double)Math.round(box.maxZ * precision) / precision;
-        double minX = (double)Math.round(box.minX * precision) / precision;
-        double minY = (double)Math.round(box.minY * precision) / precision;
-        double minZ = (double)Math.round(box.minZ * precision) / precision;
-
         // 8 Corners
-        Vec3d topFrontLeft = new Vec3d(maxX, maxY, maxZ);
-        Vec3d topFrontRight = new Vec3d(maxX, maxY, minZ);
-        Vec3d topBackRight = new Vec3d(maxX, minY, minZ);
-        Vec3d topBackLeft = new Vec3d(maxX, minY, maxZ);
-        Vec3d bottomBackRight = new Vec3d(minX, minY, minZ);
-        Vec3d bottomBackLeft = new Vec3d(minX, minY, maxZ);
-        Vec3d bottomFrontLeft = new Vec3d(minX, maxY, maxZ);
-        Vec3d bottomFrontRight = new Vec3d(minX, maxY, minZ);
+        Vec3d topFrontLeft = new Vec3d(box.maxX, box.maxY, box.maxZ);
+        Vec3d topFrontRight = new Vec3d(box.maxX, box.maxY, box.minZ);
+        Vec3d topBackRight = new Vec3d(box.maxX, box.minY, box.minZ);
+        Vec3d topBackLeft = new Vec3d(box.maxX, box.minY, box.maxZ);
+        Vec3d bottomBackRight = new Vec3d(box.minX, box.minY, box.minZ);
+        Vec3d bottomBackLeft = new Vec3d(box.minX, box.minY, box.maxZ);
+        Vec3d bottomFrontLeft = new Vec3d(box.minX, box.maxY, box.maxZ);
+        Vec3d bottomFrontRight = new Vec3d(box.minX, box.maxY, box.minZ);
 
         /*
         // In case we ever need this, here is the code for the 6 Squares of the bounding box

@@ -8,6 +8,8 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import org.dave.pipemaster.commands.CommandPipeMaster;
 import org.dave.pipemaster.data.blockgroups.BlockGroupRegistry;
 import org.dave.pipemaster.data.config.ConfigurationHandler;
 import org.dave.pipemaster.misc.PipeMasterCreativeTab;
@@ -25,7 +27,7 @@ import org.dave.pipemaster.util.Logz;
 )
 public class PipeMaster {
     public static final String MODID = "pipemaster";
-    public static final String VERSION = "1.0.0";
+    public static final String VERSION = "1.0.1";
     public static final String GUI_FACTORY = "org.dave.pipemaster.misc.ConfigGuiFactory";
 
     public static final PipeMasterCreativeTab CREATIVE_TAB = new PipeMasterCreativeTab();
@@ -57,7 +59,11 @@ public class PipeMaster {
     public void postInit(FMLPostInitializationEvent event) {
         this.blockGroupRegistry = new BlockGroupRegistry();
 
-        // TODO: Register server commands, e.g. to reload the blockgroup configuration
         proxy.postInit(event);
+    }
+
+    @Mod.EventHandler
+    public void onServerStarting(FMLServerStartingEvent event) {
+        event.registerServerCommand(new CommandPipeMaster());
     }
 }

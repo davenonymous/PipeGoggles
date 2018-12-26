@@ -1,0 +1,14 @@
+{
+  "id": "appliedenergistics2",
+  "mod": "appliedenergistics2",
+
+  "itemIcon": {
+    "name": "appliedenergistics2:part",
+    "meta": 16
+  },
+  "translationKey": "itemGroup.appliedenergistics2",
+
+  "blocks": [
+    "appliedenergistics2:cable_bus"
+  ]
+}

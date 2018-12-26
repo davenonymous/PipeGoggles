@@ -12,7 +12,9 @@ import org.dave.pipemaster.util.Logz;
 import java.awt.*;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ConfigurationHandler {
 
@@ -49,6 +51,15 @@ public class ConfigurationHandler {
 
         PipeGogglesConfigOptions.cacheTTL = configuration.getInt("cacheTTL", PipeGogglesConfigOptions.PIPE_GOOGLE_CATEGORY, 5, 0, 1000, "How long to cache nearby pipes");
         PipeGogglesConfigOptions.lineWidth = configuration.getFloat("lineWidth", PipeGogglesConfigOptions.PIPE_GOOGLE_CATEGORY, 1.5f, 0.1f, 5f, "How thick the lines should be drawn");
+
+        String validRanges = configuration.getString("validRanges", PipeGogglesConfigOptions.PIPE_GOOGLE_CATEGORY, "4,8,16", "Comma separated list of valid range values. Please note that high values can have significant impact on FPS!");
+
+        try {
+            PipeGogglesConfigOptions.validRanges = Arrays.asList(validRanges.split(",")).stream().map(Integer::parseInt).collect(Collectors.toList());
+        } catch (RuntimeException e) {
+            Logz.warn("Unable to interpret config value. Using default: 4,8,16");
+            PipeGogglesConfigOptions.validRanges = Arrays.asList(4, 8, 16);
+        }
 
         if(configuration.hasChanged()) {
             configuration.save();

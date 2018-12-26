@@ -58,7 +58,7 @@ public class PipeGogglesGuiContainer extends WidgetGuiContainer {
 
         WidgetSelectButton<Integer> rangeSelectButton = new WidgetSelectButton<>();
         rangeSelectButton.setWidth(25);
-        rangeSelectButton.addChoice(4, 8, 16);
+        rangeSelectButton.addChoice(PipeGogglesConfigOptions.validRanges);
         rangeSelectButton.setX(145);
         rangeSelectButton.setY(7);
         rangeSelectButton.addListener(ValueChangedEvent.class, (event, widget) -> {
