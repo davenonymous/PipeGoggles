@@ -14,7 +14,6 @@ import org.dave.pipemaster.gui.widgets.WidgetColorDisplay;
 import org.dave.pipemaster.gui.widgets.WidgetPanel;
 import org.dave.pipemaster.gui.widgets.WidgetSelectButton;
 import org.dave.pipemaster.gui.widgets.WidgetWithChoiceValue;
-import org.dave.pipemaster.util.Logz;
 
 import java.awt.*;
 

@@ -1,0 +1,9 @@
+{
+  "id": "mekanism",
+  "mod": "mekanism",
+  "itemIcon": "mekanism:atomicalloy",
+  "translationKey": "itemGroup.tabMekanism",
+  "blocks": [
+    "mekanism:transmitter"
+  ]
+}
