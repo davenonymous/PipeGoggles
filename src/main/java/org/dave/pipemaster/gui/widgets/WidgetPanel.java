@@ -3,12 +3,12 @@ package org.dave.pipemaster.gui.widgets;
 import com.google.common.collect.Sets;
 import net.minecraft.client.gui.GuiScreen;
 import org.dave.pipemaster.gui.event.*;
-import org.dave.pipemaster.util.Logz;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+
 
 public class WidgetPanel extends Widget {
     List<Widget> children;
@@ -25,7 +25,6 @@ public class WidgetPanel extends Widget {
 
         // Pass mouse move events along to the children, shift positions accordingly
         // Also notify widgets when the mouse entered or exited their area
-        // TODO: Move to methods, i.e. this.addListener(MouseMoveEvent.class, (event, widget) -> widget.onMouseMove(event.x, event.y));
         this.addListener(MouseMoveEvent.class, (event, widget)-> {
 
             //Logz.info("[%s] Moved mouse to x=%d, y=%d", widget.id, innerX, innerY);
@@ -57,6 +56,10 @@ public class WidgetPanel extends Widget {
             //Logz.info("%s: Click: screen@%d,%d, panel@%d,%d", this.toString(), event.x, event.y, innerX, innerY);
 
             for(Widget child : children) {
+                if(!child.visible) {
+                    continue;
+                }
+
                 //Logz.info("Checking child: %s @ %d,%d", child.toString(), innerX, innerY);
                 if(!child.isPosInside(event.x, event.y)) {
                     continue;
@@ -106,6 +109,10 @@ public class WidgetPanel extends Widget {
         widget.setParent(this);
     }
 
+    public void remove(Widget widget) {
+        children.remove(widget);
+    }
+
     public void setPadding(int padding) {
         this.paddingTop = padding;
         this.paddingBottom = padding;
@@ -150,6 +157,29 @@ public class WidgetPanel extends Widget {
                 result.add(widget);
             }
         }
+    }
+
+    public Widget getHoveredWidget(int mouseX, int mouseY) {
+        for(Widget child : children) {
+            if(!child.visible) {
+                continue;
+            }
+
+            if(child.isPosInside(mouseX, mouseY)) {
+                Widget maybeResult = null;
+                if(child instanceof WidgetPanel) {
+                    maybeResult = ((WidgetPanel) child).getHoveredWidget(mouseX, mouseY);
+                }
+
+                if(maybeResult != null && maybeResult.hasToolTip()) {
+                    return maybeResult;
+                }
+
+                return child;
+            }
+        }
+
+        return null;
     }
 
     @Override

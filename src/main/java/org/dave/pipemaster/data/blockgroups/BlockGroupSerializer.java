@@ -106,11 +106,17 @@ public class BlockGroupSerializer implements JsonDeserializer<List<BlockGroup>> 
         String groupId = rootObj.get("id").getAsString();
 
         // Get and check if a mod is required and available
-        if(rootObj.has("mod")) {
-            String requiredMod = rootObj.get("mod").getAsString();
-            if(requiredMod.length() > 0 && !Loader.isModLoaded(requiredMod)) {
-                throw new JsonParseException("Mod '"+requiredMod+"' for block group '"+groupId+"' is not loaded. Skipping integration!");
-            }
+        if(!rootObj.has("mod")) {
+            throw new JsonParseException("Missing 'mod' in block group definition");
+        }
+
+        String requiredMod = rootObj.get("mod").getAsString();
+        if(requiredMod.length() <= 0) {
+            throw new JsonParseException("Value for 'mod' in block group definition is empty");
+        }
+
+        if(!Loader.isModLoaded(requiredMod)) {
+            throw new JsonParseException("Mod '"+requiredMod+"' for block group '"+groupId+"' is not loaded. Skipping integration!");
         }
 
         // Get item used as icon to identify the group quicker
@@ -159,6 +165,7 @@ public class BlockGroupSerializer implements JsonDeserializer<List<BlockGroup>> 
         result.setItemIcon(itemIcon);
         result.setTranslationKey(translationKey);
         result.setValidBlockStates(blocks);
+        result.setModId(requiredMod);
 
         return result;
     }

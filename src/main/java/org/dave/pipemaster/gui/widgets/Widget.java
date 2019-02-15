@@ -74,6 +74,11 @@ public class Widget {
         return this;
     }
 
+    public Widget addTooltipLine(List<String> strings) {
+        this.tooltipLines.addAll(strings);
+        return this;
+    }
+
 
     public boolean focusable() {
         return true;
@@ -161,6 +166,10 @@ public class Widget {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public void setDisabled() {
+        this.enabled = false;
     }
 
     public void setParent(Widget parent) {

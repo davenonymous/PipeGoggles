@@ -1,4 +1,4 @@
-package org.dave.pipemaster.util;
+package org.dave.pipemaster.gui;
 
 import java.util.ArrayList;
 

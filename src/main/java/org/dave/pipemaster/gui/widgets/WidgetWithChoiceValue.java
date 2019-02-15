@@ -1,9 +1,11 @@
 package org.dave.pipemaster.gui.widgets;
 
+
+
+import org.dave.pipemaster.gui.CircularPointedArrayList;
 import org.dave.pipemaster.gui.event.MouseClickEvent;
 import org.dave.pipemaster.gui.event.ValueChangedEvent;
 import org.dave.pipemaster.gui.event.WidgetEventResult;
-import org.dave.pipemaster.util.CircularPointedArrayList;
 
 import java.util.Collection;
 
@@ -19,7 +21,11 @@ public class WidgetWithChoiceValue<T> extends Widget {
     }
 
     public void setValue(T choice) {
+        T oldValue = choices.getPointedElement();
         choices.setPointerTo(choice);
+        T newValue = choices.getPointedElement();
+
+        this.fireEvent(new ValueChangedEvent<T>(oldValue, newValue));
     }
 
     public void addChoice(T... newChoices) {

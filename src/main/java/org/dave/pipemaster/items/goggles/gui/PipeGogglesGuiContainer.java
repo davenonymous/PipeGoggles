@@ -30,15 +30,15 @@ public class PipeGogglesGuiContainer extends WidgetGuiContainer {
     public PipeGogglesGuiContainer(Container container, PipeGogglesData gogglesData, int currentItemSlot) {
         super(container);
 
-        this.xSize = WIDTH;
-        this.ySize = HEIGHT;
+        this.xSize = 190;
+        this.ySize = 183;
         this.gogglesData = gogglesData;
         this.currentItemSlot = currentItemSlot;
         this.gui = instantiateGui();
     }
 
     protected GUI instantiateGui() {
-        GUI gui = new GUI(0, 0, WIDTH, HEIGHT);
+        GUI gui = new GUI(0, 0, 190, 183);
         gui.setId("gui");
 
         int yPadding = 3;
@@ -59,7 +59,7 @@ public class PipeGogglesGuiContainer extends WidgetGuiContainer {
         WidgetSelectButton<Integer> rangeSelectButton = new WidgetSelectButton<>();
         rangeSelectButton.setWidth(25);
         rangeSelectButton.addChoice(PipeGogglesConfigOptions.validRanges);
-        rangeSelectButton.setX(145);
+        rangeSelectButton.setX(160);
         rangeSelectButton.setY(7);
         rangeSelectButton.addListener(ValueChangedEvent.class, (event, widget) -> {
             PipeMasterNetworkHandler.instance.sendToServer(new PipeGogglesUpdateRangeMessage(this.currentItemSlot, (Integer)event.newValue));
@@ -71,14 +71,5 @@ public class PipeGogglesGuiContainer extends WidgetGuiContainer {
         gui.add(rangeSelectButton);
 
         return gui;
-    }
-
-    @Override
-    protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
-        super.drawGuiContainerBackgroundLayer(partialTicks, mouseX, mouseY);
-
-        GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f);
-        mc.getTextureManager().bindTexture(background);
-        drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
     }
 }

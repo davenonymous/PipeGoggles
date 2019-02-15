@@ -1,5 +1,6 @@
 package org.dave.pipemaster.data.blockgroups;
 
+import com.google.common.base.Objects;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
 import org.dave.pipemaster.items.goggles.EnumBoxOptimizationStrategy;
@@ -13,6 +14,7 @@ public class BlockGroup {
     private String translationKey;
     private HashSet<IBlockState> validStates;
     private EnumBoxOptimizationStrategy optimizationStrategy;
+    private String modId;
 
     public BlockGroup(String id) {
         this.id = id;
@@ -39,6 +41,15 @@ public class BlockGroup {
         return optimizationStrategy;
     }
 
+    public String getModId() {
+        return modId;
+    }
+
+    public BlockGroup setModId(String modId) {
+        this.modId = modId;
+        return this;
+    }
+
     public String getId() {
         return id;
     }
@@ -59,5 +70,23 @@ public class BlockGroup {
     public BlockGroup setValidBlockStates(List<IBlockState> blocks) {
         this.validStates.addAll(blocks);
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("BlockGroup[id=%s]", this.id);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BlockGroup that = (BlockGroup) o;
+        return Objects.equal(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }

@@ -1,6 +1,5 @@
 package org.dave.pipemaster.gui.widgets;
 
-
 import org.dave.pipemaster.gui.event.ValueChangedEvent;
 
 public class WidgetWithValue<T> extends Widget {
@@ -8,6 +7,12 @@ public class WidgetWithValue<T> extends Widget {
 
     public T getValue() {
         return this.value;
+    }
+
+    public void setValue(T newValue) {
+        T tmpVal = this.value;
+        this.value = newValue;
+        this.fireEvent(new ValueChangedEvent<T>(tmpVal, this.value));
     }
 
     public void valueChanged(T oldValue, T newValue) {

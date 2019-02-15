@@ -1,7 +1,10 @@
 package org.dave.pipemaster.gui.widgets;
 
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.renderer.*;
+import net.minecraft.client.renderer.BufferBuilder;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.OpenGlHelper;
+import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import org.lwjgl.opengl.GL11;
 

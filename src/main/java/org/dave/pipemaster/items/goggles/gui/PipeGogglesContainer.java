@@ -19,7 +19,7 @@ public class PipeGogglesContainer extends Container {
 
     private void addPlayerSlots(IInventory playerInventory) {
         int yOffset = 101;
-        int xOffset = 8;
+        int xOffset = 15;
 
         // Slots for the main inventory
         for (int row = 0; row < 3; ++row) {

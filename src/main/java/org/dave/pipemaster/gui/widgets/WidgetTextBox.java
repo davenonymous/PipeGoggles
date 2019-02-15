@@ -11,12 +11,16 @@ public class WidgetTextBox extends Widget {
     public WidgetTextBox(String text) {
         this.setId("TextBox");
         this.text = text;
+        this.setWidth(40);
+        this.setHeight(12);
     }
 
     public WidgetTextBox(String text, int textColor) {
         this.setId("TextBox");
         this.text = text;
         this.textColor = textColor;
+        this.setWidth(40);
+        this.setHeight(12);
     }
 
     public void setText(String text) {

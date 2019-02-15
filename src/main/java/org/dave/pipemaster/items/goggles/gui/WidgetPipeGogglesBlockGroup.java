@@ -7,10 +7,14 @@ import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.resources.I18n;
 import org.dave.pipemaster.PipeMaster;
 import org.dave.pipemaster.data.blockgroups.BlockGroup;
+import org.dave.pipemaster.gui.event.MouseClickEvent;
 import org.dave.pipemaster.gui.event.ValueChangedEvent;
+import org.dave.pipemaster.gui.event.WidgetEventResult;
 import org.dave.pipemaster.gui.widgets.WidgetColorDisplay;
 import org.dave.pipemaster.gui.widgets.WidgetPanel;
 import org.dave.pipemaster.gui.widgets.WidgetSelectButton;
+import org.dave.pipemaster.gui.widgets.WidgetWithChoiceValue;
+import org.dave.pipemaster.util.Logz;
 
 import java.awt.*;
 
@@ -39,14 +43,37 @@ public class WidgetPipeGogglesBlockGroup extends WidgetPanel {
                 }
                 RenderHelper.disableStandardItemLighting();
             }
+
+            @Override
+            public void addClickListener() {
+                // Auto-Select proper group when clicked with specific item, e.g. if clicked with Refined Storage cable, auto-select the refinedstorage group.
+                this.addListener(MouseClickEvent.class, (event, widget) -> {
+                    if(!event.carriedStack.isEmpty()) {
+
+                        String modId = event.carriedStack.getItem().getRegistryName().getNamespace();
+                        BlockGroup selected = PipeMaster.blockGroupRegistry.getBlockGroupByModId(modId);
+
+                        ((WidgetWithChoiceValue)widget).setValue(selected);
+                    } else {
+                        // Otherwise handle as usual.
+                        if(event.isLeftClick()) {
+                            ((WidgetWithChoiceValue)widget).next();
+                        } else {
+                            ((WidgetWithChoiceValue)widget).prev();
+                        }
+                    }
+                    return WidgetEventResult.HANDLED;
+                });
+
+            }
         };
         groupSelectButton.addChoice(PipeMaster.blockGroupRegistry.getBlockGroups());
-        groupSelectButton.setWidth(120);
+        groupSelectButton.setWidth(135);
         groupSelectButton.setX(17);
         groupSelectButton.setY(2);
         groupSelectButton.setValue(initialGroup);
-        // TODO: Auto-Select proper group when clicked with specific item, e.g. if clicked with Refined Storage cable, auto-select the refinedstorage group.
-        // TODO: Add range slider and Power Usage display
+
+        // TODO: Add Power Usage display
 
         this.addChildListener(ValueChangedEvent.class, groupSelectButton);
         this.add(groupSelectButton);

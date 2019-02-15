@@ -515,7 +515,7 @@ public class WidgetInputField extends WidgetWithValue<String> {
     }
 
     /**
-     * Sets the color to use when drawing this text box's text. A different color is used if this text box is disabled.
+     * Sets the color to use when drawing this text box's text. A different color is used if this text box is disabledHillProperties.
      */
     public void setTextColor(int color)
     {
@@ -523,7 +523,7 @@ public class WidgetInputField extends WidgetWithValue<String> {
     }
 
     /**
-     * Sets the color to use for text in this text box when this text box is disabled.
+     * Sets the color to use for text in this text box when this text box is disabledHillProperties.
      */
     public void setDisabledTextColour(int color)
     {

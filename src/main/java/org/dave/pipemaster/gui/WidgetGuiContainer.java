@@ -3,6 +3,7 @@ package org.dave.pipemaster.gui;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.inventory.Container;
+import net.minecraft.inventory.Slot;
 import org.dave.pipemaster.gui.event.*;
 
 import java.io.IOException;
@@ -10,7 +11,6 @@ import java.io.IOException;
 public abstract class WidgetGuiContainer extends GuiContainer {
     protected GUI gui;
 
-    // TODO: Move inside GUI class
     private int previousMouseX = Integer.MAX_VALUE;
     private int previousMouseY = Integer.MAX_VALUE;
 
@@ -26,7 +26,6 @@ public abstract class WidgetGuiContainer extends GuiContainer {
 
     @Override
     protected void keyTyped(char typedChar, int keyCode) throws IOException {
-        // TODO: We need event cancelling etc
         if(gui.fireEvent(new KeyTypedEvent(typedChar, keyCode)) == WidgetEventResult.CONTINUE_PROCESSING) {
             super.keyTyped(typedChar, keyCode);
         }
@@ -51,7 +50,6 @@ public abstract class WidgetGuiContainer extends GuiContainer {
         }
 
         RenderHelper.enableGUIStandardItemLighting();
-        gui.drawGUI(this);
         gui.drawTooltips(this, mouseX, mouseY);
         renderHoveredToolTip(mouseX, mouseY);
         RenderHelper.disableStandardItemLighting();
@@ -60,5 +58,17 @@ public abstract class WidgetGuiContainer extends GuiContainer {
     @Override
     protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
         this.drawDefaultBackground();
+        gui.drawGUI(this);
+        // Draw slots
+        if(this.inventorySlots != null && this.inventorySlots.inventorySlots != null) {
+            for(Slot slot : this.inventorySlots.inventorySlots) {
+                gui.drawSlot(this, slot, guiLeft, guiTop);
+            }
+        }
+    }
+
+    protected void resetMousePositions() {
+        this.previousMouseX = Integer.MIN_VALUE;
+        this.previousMouseY = Integer.MIN_VALUE;
     }
 }
