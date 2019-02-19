@@ -40,7 +40,6 @@ public class PipeGogglesContainer extends Container {
 
     @Override
     public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {
-        // TODO: Make it possible to rearrange the player inventory with shift-clicking in this gui
         return ItemStack.EMPTY;
     }
 

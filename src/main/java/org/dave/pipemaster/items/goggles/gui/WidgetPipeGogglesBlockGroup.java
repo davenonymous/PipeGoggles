@@ -72,10 +72,7 @@ public class WidgetPipeGogglesBlockGroup extends WidgetPanel {
         groupSelectButton.setY(2);
         groupSelectButton.setValue(initialGroup);
 
-        // TODO: Add Power Usage display
-
         this.addChildListener(ValueChangedEvent.class, groupSelectButton);
         this.add(groupSelectButton);
-
     }
 }

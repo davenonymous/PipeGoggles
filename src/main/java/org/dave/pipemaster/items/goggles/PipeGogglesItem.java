@@ -10,7 +10,6 @@ import org.dave.pipemaster.PipeMaster;
 import org.dave.pipemaster.base.ItemBase;
 import org.dave.pipemaster.init.Itemss;
 import org.dave.pipemaster.proxy.GuiProxy;
-import org.dave.pipemaster.util.Logz;
 
 public class PipeGogglesItem extends ItemBase {
     private BoxOptimizer[] optimizers = {
