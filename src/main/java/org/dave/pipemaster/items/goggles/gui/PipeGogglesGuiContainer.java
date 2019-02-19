@@ -1,6 +1,5 @@
 package org.dave.pipemaster.items.goggles.gui;
 
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.inventory.Container;
 import net.minecraft.util.ResourceLocation;
@@ -14,7 +13,6 @@ import org.dave.pipemaster.gui.event.WidgetEventResult;
 import org.dave.pipemaster.gui.widgets.WidgetSelectButton;
 import org.dave.pipemaster.items.goggles.PipeGogglesConfigOptions;
 import org.dave.pipemaster.items.goggles.PipeGogglesData;
-import org.dave.pipemaster.items.goggles.PipeGogglesItem;
 import org.dave.pipemaster.items.goggles.network.PipeGogglesUpdateBlockGroupMessage;
 import org.dave.pipemaster.items.goggles.network.PipeGogglesUpdateRangeMessage;
 import org.dave.pipemaster.network.PipeMasterNetworkHandler;
