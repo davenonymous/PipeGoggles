@@ -16,8 +16,10 @@ Currently supported mods:
 - Cyclic
 - EnderIO
 - Extra Utilities 2
+- Immersive Engineering
 - Integrated Dynamics
 - Mekanism
+- OpenComputers
 - Refined Storage
 - Simple Storage Network
 - Thermal Dynamics
