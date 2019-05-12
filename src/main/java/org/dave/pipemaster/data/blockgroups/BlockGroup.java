@@ -64,7 +64,7 @@ public class BlockGroup {
 
     public boolean containsBlockState(IBlockState state) {
         //Logz.info("Checking whether %s is in %s", state, this.validStates);
-        return this.validStates.contains(state.getBlock().getDefaultState());
+        return this.validStates.contains(state.getBlock().getDefaultState()) || this.validStates.contains(state);
     }
 
     public BlockGroup setValidBlockStates(List<IBlockState> blocks) {

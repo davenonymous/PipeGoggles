@@ -1,0 +1,11 @@
+{
+  "id": "opencomputers",
+  "mod": "opencomputers",
+
+  "itemIcon": "opencomputers:storage",
+  "translationKey": "OpenComputers",
+
+  "blocks": [
+    "opencomputers:cable"
+  ]
+}

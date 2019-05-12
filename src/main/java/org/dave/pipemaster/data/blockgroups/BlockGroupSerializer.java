@@ -66,7 +66,7 @@ public class BlockGroupSerializer implements JsonDeserializer<List<BlockGroup>> 
     }
 
     private IBlockState deserializeBlockState(JsonElement element) throws JsonParseException {
-        int meta = 0;
+        int meta = -1;
         String blockName;
         if(element.isJsonObject()) {
             JsonObject data = element.getAsJsonObject();
@@ -75,7 +75,7 @@ public class BlockGroupSerializer implements JsonDeserializer<List<BlockGroup>> 
                 return null;
             }
             blockName = data.get("name").getAsString();
-            meta = data.has("meta") ? data.get("meta").getAsInt() : 0;
+            meta = data.has("meta") ? data.get("meta").getAsInt() : -1;
         } else {
             blockName = element.getAsString();
         }
@@ -87,8 +87,11 @@ public class BlockGroupSerializer implements JsonDeserializer<List<BlockGroup>> 
             throw new JsonParseException("Could not find block with name: " + blockName);
         }
 
-        // TODO: Care about meta data?
-        return block.getDefaultState();
+        if(meta == -1) {
+            return block.getDefaultState();
+        }
+
+        return block.getStateFromMeta(meta);
     }
 
     private BlockGroup deserializeBlockGroup(JsonElement root) throws JsonParseException {

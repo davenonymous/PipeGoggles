@@ -1,0 +1,18 @@
+{
+  "id": "immersiveengineering",
+  "mod": "immersiveengineering",
+
+  "itemIcon": {
+    "name": "immersiveengineering:connector",
+    "meta": 5
+  },
+  "translationKey": "itemGroup.immersiveengineering",
+
+  "blocks": [
+    "immersiveengineering:connector",
+    {
+      "name": "immersiveengineering:metal_device1",
+      "meta": 6
+    }
+  ]
+}
