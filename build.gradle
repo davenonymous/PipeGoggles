@@ -13,6 +13,13 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
+repositories {
+    maven {
+        name 'davenonymous maven'
+        url "http://maven.davenonymous.com/repository/maven-releases"
+    }
+}
+
 version = "${mod_version}"
 group = 'com.davenonymous.pipegoggles' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'pipegoggles'
