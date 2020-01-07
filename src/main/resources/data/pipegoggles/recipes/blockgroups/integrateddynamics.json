@@ -1,0 +1,14 @@
+{
+  "type": "pipegoggles:blockgroup",
+  "mod": "integrateddynamics",
+
+  "itemIcon": {
+    "item": "integrateddynamics:variable"
+  },
+
+  "translationKey": "itemGroup.integrateddynamics",
+
+  "blocks": [
+    { "block": "integrateddynamics:cable" }
+  ]
+}

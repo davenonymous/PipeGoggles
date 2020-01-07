@@ -1,0 +1,14 @@
+{
+  "type": "pipegoggles:blockgroup",
+  "mod": "inspirations",
+
+  "itemIcon": {
+    "item": "inspirations:pipe"
+  },
+
+  "translationKey": "Inspirations",
+
+  "blocks": [
+    { "block": "inspirations:pipe" }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pipegoggles",
+  "result": {
+    "item": "pipegoggles:pipe_goggles",
+    "count": 1
+  },
+  "pattern": [
+    "g g",
+    "r r",
+    "iii"
+  ],
+  "key": {
+    "g": {
+      "item": "minecraft:glass_pane"
+    },
+    "r": {
+      "item": "minecraft:redstone"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
+  }
+}

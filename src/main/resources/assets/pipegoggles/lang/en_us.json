@@ -1,0 +1,8 @@
+{
+  "item.pipegoggles.pipe_goggles": "Pipe Goggles",
+
+  "pipegoggles.gui.range": "Range",
+
+  "pipegoggles.tooltip_1": "See nearby pipes through walls",
+  "pipegoggles.tooltip_2": "Right-click to configure"
+}
