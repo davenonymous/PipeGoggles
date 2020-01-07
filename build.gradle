@@ -184,7 +184,7 @@ publishing {
             name = "davenonymous maven"
             url = uri("http://maven.davenonymous.com/repository/maven-releases")
             credentials {
-                username = System.getenv("DAVE_MAVEN_USER")
+                username = "davenonymous"
                 password = System.getenv("DAVE_MAVEN_PASSWORD")
             }
         }
