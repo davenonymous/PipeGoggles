@@ -65,7 +65,7 @@ Pipe Goggles allow the wearer to see various plumbing through the walls.
     versionRange="[1.14.4]"
     ordering="NONE"
     side="BOTH"
-    
+
 [[dependencies.pipegoggles]]
     modId="libnonymous"
     mandatory=true

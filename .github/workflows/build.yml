@@ -21,8 +21,13 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: Assemble
+      run: ./gradlew assemble || ./gradlew assemble || ./gradlew assemble
+      env:
+        GITHUB_BUILD: 1
+
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew build -S
       env:
         GITHUB_BUILD: 1
 
