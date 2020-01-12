@@ -1,5 +1,6 @@
 package com.davenonymous.pipegoggles.setup;
 
+import com.davenonymous.libnonymous.utils.RecipeHelper;
 import com.davenonymous.pipegoggles.PipeGoggles;
 import com.davenonymous.pipegoggles.data.BlockGroupSerializer;
 import com.davenonymous.pipegoggles.gui.PipeGogglesContainer;
@@ -39,7 +40,7 @@ public class RegistryEvents {
     public static void onRecipeRegistry(final RegistryEvent.Register<IRecipeSerializer<?>> event) {
         IForgeRegistry<IRecipeSerializer<?>> registry = event.getRegistry();
 
-        RecipeTypes.blockGroupRecipeType = RecipeTypes.registerRecipeType("blockgroup");
+        RecipeTypes.blockGroupRecipeType = RecipeHelper.registerRecipeType(new ResourceLocation(PipeGoggles.MODID, "blockgroup"));
         RecipeTypes.blockGroupSerializer = new BlockGroupSerializer();
         registry.register(RecipeTypes.blockGroupSerializer);
     }
