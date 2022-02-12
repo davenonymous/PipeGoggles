@@ -1,11 +1,10 @@
-package com.davenonymous.pipegoggles.setup;
+package com.davenonymous.bonsaitrees3.setup;
 
-import com.davenonymous.pipegoggles.network.Networking;
-import net.minecraftforge.common.MinecraftForge;
+import com.davenonymous.bonsaitrees3.network.Networking;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 public class ModSetup {
-    public void init() {
-        MinecraftForge.EVENT_BUS.register(new ForgeEventHandlers());
-        Networking.registerMessages();
-    }
+	public static void init(FMLCommonSetupEvent event) {
+		Networking.registerMessages();
+	}
 }
