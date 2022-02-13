@@ -1,0 +1,20 @@
+{
+  "type": "pipegoggles:blockgroup",
+
+  "itemIcon": {
+	"item": "minecraft:redstone"
+  },
+
+  "translationKey": "itemGroup.redstone",
+
+  "blocks": [
+	{ "block": "minecraft:redstone_block" },
+	{ "block": "minecraft:redstone_wire" },
+	{ "block": "minecraft:redstone_lamp" },
+	{ "block": "minecraft:redstone_torch" },
+	{ "block": "minecraft:repeater" },
+	{ "block": "minecraft:comparator" },
+	{ "block": "minecraft:lever" },
+	{ "block": "minecraft:stone_button" }
+  ]
+}

@@ -1,15 +1,14 @@
 package com.davenonymous.pipegoggles.setup;
 
-import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import com.davenonymous.pipegoggles.data.BlockGroup;
+import com.davenonymous.pipegoggles.data.BlockGroupHelper;
+import com.davenonymous.pipegoggles.data.BlockGroupSerializer;
+import com.davenonymous.pipegoggles.gui.PipeGogglesContainer;
+import com.davenonymous.pipegoggles.item.PipeGogglesItem;
 import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
@@ -38,12 +37,11 @@ public class Registration {
 		RECIPE_SERIALIZERS.register(bus);
 	}
 
-	/*
-	public static RecipeType<SoilInfo> RECIPE_TYPE_SOIL;
-	public static SoilRecipeHelper RECIPE_HELPER_SOIL;
-	public static final RegistryObject<RecipeSerializer<?>> SOIL_SERIALIZER = RECIPE_SERIALIZERS.register("soil", () -> new SoilSerializer());
-*/
+	public static RecipeType<BlockGroup> blockGroupRecipeType;
+	public static final RegistryObject<RecipeSerializer<?>> blockGroupSerializer = RECIPE_SERIALIZERS.register("blockgroup", () -> new BlockGroupSerializer());
 
-	//public static final RegistryObject<MenuType<BonsaiPotContainer>> BONSAI_POT_CONTAINER = CONTAINERS.register("bonsaipot", () -> IForgeMenuType.create((windowId, inv, data) -> new BonsaiPotContainer(windowId, data.readBlockPos(), inv, inv.player)));
+	public static final RegistryObject<Item> PIPE_GOOGLES = ITEMS.register("pipegoggles", PipeGogglesItem::new);
+
+	public static final RegistryObject<MenuType<PipeGogglesContainer>> PIPEGOGGLES_CONTAINER = CONTAINERS.register("bonsaipot", () -> IForgeMenuType.create((windowId, inv, data) -> new PipeGogglesContainer(windowId, data.readBlockPos(), inv, inv.player)));
 
 }

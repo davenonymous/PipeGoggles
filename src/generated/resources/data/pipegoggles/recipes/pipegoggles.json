@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "pipegoggles",
+  "pattern": [
+    "g g",
+    "r r",
+    "iii"
+  ],
+  "key": {
+    "g": {
+      "tag": "forge:glass_panes"
+    },
+    "r": {
+      "tag": "forge:dusts/redstone"
+    },
+    "i": {
+      "tag": "forge:ingots/iron"
+    }
+  },
+  "result": {
+    "item": "pipegoggles:pipegoggles"
+  }
+}

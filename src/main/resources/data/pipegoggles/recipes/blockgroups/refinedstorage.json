@@ -1,0 +1,19 @@
+{
+  "type": "pipegoggles:blockgroup",
+  "conditions": [{ "type": "forge:mod_loaded", "modid": "refinedstorage" }],
+
+  "itemIcon": {
+    "item": "refinedstorage:controller"
+  },
+
+  "translationKey": "itemGroup.refinedstorage",
+
+  "blocks": [
+    { "block": "refinedstorage:cable" },
+    { "block": "refinedstorage:importer" },
+    { "block": "refinedstorage:exporter" },
+    { "block": "refinedstorage:external_storage" },
+    { "block": "refinedstorage:constructor" },
+    { "block": "refinedstorage:destructor" }
+  ]
+}
