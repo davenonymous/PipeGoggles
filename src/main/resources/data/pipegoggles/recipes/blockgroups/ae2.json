@@ -1,0 +1,14 @@
+{
+  "type": "pipegoggles:blockgroup",
+  "conditions": [{ "type": "forge:mod_loaded", "modid": "ae2" }],
+
+  "itemIcon": {
+    "item": "ae2:controller"
+  },
+
+  "translationKey": "itemGroup.ae2",
+
+  "blocks": [
+    { "block": "ae2:cable_bus" }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "pipegoggles:blockgroup",
+  "conditions": [{ "type": "forge:mod_loaded", "modid": "pipez" }],
+
+  "itemIcon": {
+	"item": "pipez:wrench"
+  },
+
+  "translationKey": "itemGroup.pipez",
+
+  "blocks": [
+	{ "block": "pipez:item_pipe" },
+	{ "block": "pipez:fluid_pipe" },
+	{ "block": "pipez:energy_pipe" },
+	{ "block": "pipez:universal_pipe" }
+  ]
+}
