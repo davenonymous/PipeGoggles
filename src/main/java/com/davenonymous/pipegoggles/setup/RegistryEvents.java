@@ -1,16 +1,13 @@
 package com.davenonymous.pipegoggles.setup;
 
-import com.davenonymous.libnonymous.base.RecipeData;
-import com.davenonymous.pipegoggles.data.BlockGroup;
-import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 import static com.davenonymous.pipegoggles.PipeGoggles.MODID;
 
@@ -20,20 +17,8 @@ import static com.davenonymous.pipegoggles.PipeGoggles.MODID;
 public class RegistryEvents {
 
     @SubscribeEvent
-    public static void createNewRegistry(RegistryEvent.NewRegistry event) {
-        Registration.blockGroupRecipeType = createRecipeType(BlockGroup.class, "blockgroup");
-    }
-
-    private static <T extends RecipeData> RecipeType<T> createRecipeType(Class<T> type, String id) {
-        ResourceLocation recipeTypeResource = new ResourceLocation(MODID, id);
-        RecipeType<T> reg = Registry.register(Registry.RECIPE_TYPE, recipeTypeResource, new RecipeType<T>() {
-            @Override
-            public String toString() {
-                return recipeTypeResource.toString();
-            }
-        });
-
-        return reg;
+    static void onCommonSetup(FMLCommonSetupEvent event) {
+        Registration.blockGroupRecipeType = RecipeType.register(new ResourceLocation(MODID, "blockgroup").toString());
     }
 
     @SubscribeEvent

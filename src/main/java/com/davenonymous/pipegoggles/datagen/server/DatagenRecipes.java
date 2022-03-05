@@ -20,6 +20,7 @@ public class DatagenRecipes extends RecipeProvider {
 
 	@Override
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
+		/*
 		ShapedRecipeBuilder
 				.shaped(Registration.PIPE_GOOGLES.get())
 				.pattern("g g").pattern("r r").pattern("iii")
@@ -27,5 +28,6 @@ public class DatagenRecipes extends RecipeProvider {
 				.define('r', Tags.Items.DUSTS_REDSTONE)
 				.define('i', Tags.Items.INGOTS_IRON)
 				.group(PipeGoggles.MODID).unlockedBy("pipegoggles", InventoryChangeTrigger.TriggerInstance.hasItems(Items.GLASS_PANE, Items.REDSTONE, Items.IRON_INGOT)).save(consumer);
+		*/
 	}
 }
