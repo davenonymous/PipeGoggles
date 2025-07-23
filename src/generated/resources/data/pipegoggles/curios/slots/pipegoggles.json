@@ -1,0 +1,8 @@
+{
+  "drop_rule": "ALWAYS_KEEP",
+  "icon": "pipegoggles:slot/pipegoggles_slot",
+  "size": 1,
+  "validators": [
+    "curios:tag"
+  ]
+}

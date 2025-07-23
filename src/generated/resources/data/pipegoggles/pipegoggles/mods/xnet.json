@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "xnet"
+    }
+  ],
+  "blocks": [
+    "xnet:netcable",
+    "xnet:connector"
+  ],
+  "items": [
+    "#xnet:cables",
+    "#xnet:connectors"
+  ],
+  "mod": "xnet"
+}

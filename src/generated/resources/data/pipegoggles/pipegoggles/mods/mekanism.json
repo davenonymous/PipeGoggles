@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "blocks": [
+    "mekanism:basic_logistical_transporter",
+    "mekanism:basic_universal_cable",
+    "mekanism:basic_mechanical_pipe",
+    "mekanism:basic_pressurized_tube",
+    "mekanism:basic_thermodynamic_conductor",
+    "mekanism:advanced_logistical_transporter",
+    "mekanism:advanced_universal_cable",
+    "mekanism:advanced_mechanical_pipe",
+    "mekanism:advanced_pressurized_tube",
+    "mekanism:advanced_thermodynamic_conductor",
+    "mekanism:elite_logistical_transporter",
+    "mekanism:elite_universal_cable",
+    "mekanism:elite_mechanical_pipe",
+    "mekanism:elite_pressurized_tube",
+    "mekanism:elite_thermodynamic_conductor",
+    "mekanism:ultimate_logistical_transporter",
+    "mekanism:ultimate_universal_cable",
+    "mekanism:ultimate_mechanical_pipe",
+    "mekanism:ultimate_pressurized_tube",
+    "mekanism:ultimate_thermodynamic_conductor"
+  ],
+  "mod": "mekanism"
+}

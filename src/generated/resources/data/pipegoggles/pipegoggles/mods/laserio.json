@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "laserio"
+    }
+  ],
+  "blocks": [
+    "laserio:laser_connector",
+    "laserio:laser_connector_advanced",
+    "laserio:laser_node"
+  ],
+  "mod": "laserio"
+}

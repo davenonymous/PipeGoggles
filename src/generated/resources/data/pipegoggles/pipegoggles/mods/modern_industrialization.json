@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "modern_industrialization"
+    }
+  ],
+  "blocks": [
+    "modern_industrialization:pipe"
+  ],
+  "mod": "modern_industrialization"
+}

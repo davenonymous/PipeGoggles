@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "fluxnetworks"
+    }
+  ],
+  "blocks": [
+    "fluxnetworks:flux_point",
+    "fluxnetworks:flux_plug"
+  ],
+  "mod": "fluxnetworks"
+}

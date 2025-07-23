@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "refinedstorage"
+    }
+  ],
+  "blocks": [
+    "refinedstorage:cable"
+  ],
+  "items": [
+    "#refinedstorage:cables"
+  ],
+  "mod": "refinedstorage"
+}

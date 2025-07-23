@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "pipez"
+    }
+  ],
+  "blocks": [
+    "pipez:universal_pipe",
+    "pipez:energy_pipe",
+    "pipez:fluid_pipe",
+    "pipez:item_pipe",
+    "pipez:gas_pipe"
+  ],
+  "mod": "pipez"
+}

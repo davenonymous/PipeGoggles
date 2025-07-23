@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "pipegoggles:pipegoggles"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "pipegoggles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:glass_pane"
+          },
+          {
+            "items": "minecraft:redstone"
+          },
+          {
+            "items": "minecraft:iron_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "pipegoggles"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "pipegoggles:pipegoggles"
+    ]
+  }
+}
