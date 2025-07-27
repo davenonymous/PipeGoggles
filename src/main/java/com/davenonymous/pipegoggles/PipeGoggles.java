@@ -1,7 +1,6 @@
 package com.davenonymous.pipegoggles;
 
 import com.davenonymous.pipegoggles.config.Config;
-import com.davenonymous.pipegoggles.setup.ClassInheritances;
 import com.davenonymous.pipegoggles.setup.Registration;
 import com.mojang.logging.LogUtils;
 import net.minecraft.resources.ResourceLocation;
@@ -22,7 +21,6 @@ public class PipeGoggles {
 	public static ResourceLocation resource(String path) {
 		return ResourceLocation.fromNamespaceAndPath(MODID, path);
 	}
-	public static ClassInheritances CLASS_INHERITANCES;
 
 	public PipeGoggles(IEventBus modEventBus, ModContainer modContainer)
 	{
@@ -31,7 +29,5 @@ public class PipeGoggles {
 
 		modContainer.registerConfig(ModConfig.Type.COMMON, Config.COMMON_SPEC);
 		modContainer.registerConfig(ModConfig.Type.CLIENT, Config.CLIENT_SPEC);
-
-		CLASS_INHERITANCES = new ClassInheritances();
 	}
 }
