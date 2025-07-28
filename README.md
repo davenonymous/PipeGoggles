@@ -1,24 +1,51 @@
-Pipe Goggles
-===========
+# Pipe Goggles
 
-Description
----------------------------
+## Description
 
 Pipe Goggles currently only adds a single item, the Pipe Goggles.
-They allow the wearer (just hold it in your hand) to see various plumbing through the walls.
+They allow the wearer to see various plumbing through the walls.
 
-Which pipes are visible can be configured by right-clicking the tool.
+## Usage
 
-Currently supported mods (1.14):
---------------------------------
+Right click with the goggles in hand to open a small configuration GUI. 
+
+![GUI](https://github.com/davenonymous/PipeGoggles/blob/1.21.1/assets/goggles-gui.png?raw=true)
+
+Insert the pipes you want to see into the colored slots.
+
+The goggles can be in three different modes:
+
+- Always on: The goggles are always active, showing all pipes.
+- Always off: The goggles are never active, showing no pipes.
+- Automatic: The goggles will only show matching pipes when the player is holding a pipe item in their hand.
+
+You can additionally configure the range of the goggles, the line-thickness of the pipes and their opacity.
+
+Depending on the configuration of the mod your goggles will need to be powered to work!
+
+## Supported mods (1.21.1):
+
+- Applied Energistics 2
+- EnderIO
+- Flux Networks
+- IntegratedDynamics
+- LaserIO
+- Mekanism
+- Redstone (from vanilla minecraft)
+- MoreRed
+- Pipez
+- Refined Storage
+- XNet
+
+
+## Supported mods (1.14):
 
 - Refined Storage
 - Simple Storage Network
 - Inspirations
 - Integrated Dynamics
 
-Currently supported mods (1.12):
---------------------------------
+## Supported mods (1.12):
 
 - Applied Energistics
 - Cyclic
@@ -32,8 +59,38 @@ Currently supported mods (1.12):
 - Simple Storage Network
 - Thermal Dynamics
 
-Adding support for other mods:
----------------------------
+## Adding support for other mods (1.21.1 and above):
+
+This is pretty straight forward and an example is better than words for this one:
+```json
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "xnet"
+    }
+  ],
+  "blocks": [
+    "xnet:netcable",
+    "xnet:connector"
+  ],
+  "items": [
+    "#xnet:cables",
+    "#xnet:connectors"
+  ],
+  "mod": "xnet"
+}
+```
+
+`blocks` are the blocks that should be highlighted. These can be block ids or tags.
+`items` are the items that enable the goggles in auto-mode to highlight the pipes. Also item ids or tags.
+
+That file should be placed here: `<your-data-pack>/data/pipegoggles/pipegoggles/mods/xnet.json`.
+
+More examples can be found [here](https://github.com/davenonymous/PipeGoggles/tree/1.21.1/src/generated/resources/data/pipegoggles/pipegoggles/mods).
+
+
+## Adding support for other mods (1.18 and below):
 
 This is actually quite easy as only a single .json file per mod is required and it does not have many options.
 It might be enough for you to just take a look at one of the shipped integrations, for example the one for [Thermal Dynamics](https://github.com/thraaawn/PipeMaster/blob/master/src/main/resources/assets/pipemaster/config/blockgroups/thermaldynamics.json).
