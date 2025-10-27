@@ -25,7 +25,6 @@ public class BoxRenderer {
     private static void renderBlockOutline(PoseStack poseStack, Collection<BoxLineCache.Line> lines, int color, int lineWidth) {
 
 		var bufferSource = Minecraft.getInstance().renderBuffers().bufferSource();
-		RenderSystem.disableCull();
 		RenderSystem.enableBlend();
 		var consumer = bufferSource.getBuffer(OverlayLineRenderType.forThickness(lineWidth));
 		var pose = poseStack.last();
@@ -45,7 +44,7 @@ public class BoxRenderer {
 			renderLine(pose, consumer, sx, sy, sz, dx, dy, dz, r, g, b, a, r, g, b);
         }
 		RenderSystem.disableBlend();
-		RenderSystem.enableCull();
+		bufferSource.endBatch();
     }
 
 	private static void renderLine(PoseStack.Pose pose, VertexConsumer consumer, double minX, double minY, double minZ, double maxX, double maxY, double maxZ, float red,
