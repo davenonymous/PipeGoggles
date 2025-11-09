@@ -1,5 +1,8 @@
 package com.davenonymous.pipegoggles;
 
+import com.davenonymous.pipegoggles.compat.AnnotationHelpers;
+import com.davenonymous.pipegoggles.compat.SpecialPipeHandler;
+import com.davenonymous.pipegoggles.compat.SpecialPipeHandlers;
 import com.davenonymous.pipegoggles.config.Config;
 import com.davenonymous.pipegoggles.setup.Registration;
 import com.mojang.logging.LogUtils;
@@ -27,6 +30,10 @@ public class PipeGoggles {
 		CONTAINER = modContainer;
 		Registration.register(modEventBus);
 
+		try {
+			SpecialPipeHandlers.find();
+		} catch (AnnotationHelpers.AnnotatedLoadException ignore) {
+		}
 		modContainer.registerConfig(ModConfig.Type.COMMON, Config.COMMON_SPEC);
 		modContainer.registerConfig(ModConfig.Type.CLIENT, Config.CLIENT_SPEC);
 	}

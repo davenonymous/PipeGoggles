@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "blocks": [
+    "create:shaft",
+    "create:large_cogwheel",
+    "create:cogwheel",
+    "create:belt",
+    "create:fluid_pipe",
+    "create:mechanical_pump",
+    "create:smart_fluid_pipe",
+    "create:fluid_valve",
+    "create:gearbox",
+    "create:vertical_gearbox",
+    "create:clutch",
+    "create:gearshift",
+    "create:rotation_speed_controller",
+    "create:sequenced_gearshift",
+    "create:stressometer",
+    "create:speedometer"
+  ],
+  "mod": "create"
+}

@@ -44,6 +44,7 @@ public class DGRegistries extends RegistrySetBuilder {
 			ItemList.of("#ae2:glass_cable", "#ae2:covered_cable", "#ae2:covered_dense_cable", "#ae2:smart_cable", "#ae2:smart_dense_cable"));
 
 		addMekanismSupport();
+		addCreateSupport();
 		addMinecraftRedstoneSupport();
 		addMoreRedSupport();
 
@@ -75,6 +76,39 @@ public class DGRegistries extends RegistrySetBuilder {
 
 		}
 		support("mekanism", blocks, ItemList.of());
+	}
+
+	public void addCreateSupport() {
+		var blockList = BlockList.of(
+			"create:shaft",
+			"create:large_cogwheel",
+			"create:cogwheel",
+			"create:belt",
+			"create:fluid_pipe",
+			"create:mechanical_pump",
+			"create:smart_fluid_pipe",
+			"create:fluid_valve",
+			"create:gearbox",
+			"create:vertical_gearbox",
+			"create:clutch",
+			"create:gearshift",
+			"create:rotation_speed_controller",
+			"create:sequenced_gearshift",
+			"create:stressometer",
+			"create:speedometer"
+		);
+
+		var itemList = ItemList.of();
+
+		var supportData = new GoggleSupport(
+			"create",
+			EnumBoxOptimizationStrategy.REMOVE_DUPLICATE_LINES,
+			blockList,
+			itemList,
+			true
+		);
+
+		addGoggleSupport("create", supportData);
 	}
 
 	public void addMinecraftRedstoneSupport() {
