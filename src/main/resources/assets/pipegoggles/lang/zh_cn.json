@@ -19,7 +19,7 @@
   "pipegoggles.configuration.rules.max_energy": "最大能量",
   "pipegoggles.configuration.rules.max_energy.tooltip": "管道眼镜能储存的最大能量数量。",
   "pipegoggles.configuration.rules.max_energy_receive": "最大能量接收",
-  "pipegoggles.configuration.rules.max_energy_receive.tooltip": "管道眼镜每刻内科接收的最大能量数量。",
+  "pipegoggles.configuration.rules.max_energy_receive.tooltip": "管道眼镜每刻内可接收的最大能量数量。",
   "pipegoggles.configuration.rules.range_options": "范围选项",
   "pipegoggles.configuration.rules.range_options.tooltip": "管道眼镜的可用范围选项。此列表最少需要2个值，一个为范围最小值，另一个为范围最大值。",
   "pipegoggles.configuration.rules.require_energy": "需要能量",
