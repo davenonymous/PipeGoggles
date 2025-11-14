@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-09T17:27:33.6303122	Registries
+// 1.21.1	2025-11-14T16:19:56.7375908	Registries
 5e866f7d42790666a7065f8907735b876da8220b data/pipegoggles/pipegoggles/mods/ae2.json
 e79eb6bce7c00b665825c1c843d0d4dee7e1c25b data/pipegoggles/pipegoggles/mods/create.json
 904271457a7e735f0de558dab5c27d28a22e3bb3 data/pipegoggles/pipegoggles/mods/enderio.json
@@ -9,6 +9,9 @@ bfb58d18dbbeb1b973cac440ce35edbe414cba98 data/pipegoggles/pipegoggles/mods/laser
 325cd71f4abf6904249046ff39056d75d9c0621f data/pipegoggles/pipegoggles/mods/minecraft_redstone.json
 257284b6bf16a62ee715a1b97ef186c98fbd5658 data/pipegoggles/pipegoggles/mods/modern_industrialization.json
 34676f0a3ecdc54eae8fb533153a50dff38a635b data/pipegoggles/pipegoggles/mods/morered.json
+68554ab20ad3cc5c74f8da04cb42a6c379d94744 data/pipegoggles/pipegoggles/mods/oritech.json
 13aa981e24d2be5b5506f7e2c0be461912272a06 data/pipegoggles/pipegoggles/mods/pipez.json
+e39bbd0fb219afe3b6f894a90aa8b48c2bcd9b81 data/pipegoggles/pipegoggles/mods/pneumaticcraft.json
 69007d1dedfbb60807ce6c2de5999b4b261b6139 data/pipegoggles/pipegoggles/mods/refinedstorage.json
+487c8c5f9f25d9c67ef111c29c7630c7c70e4ea8 data/pipegoggles/pipegoggles/mods/replication.json
 8926ae6519213d9d5df9261cc019f74a07b3847a data/pipegoggles/pipegoggles/mods/xnet.json

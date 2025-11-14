@@ -29,7 +29,19 @@ public class DGRegistries extends RegistrySetBuilder {
 		simpleSupport("pipez", "pipez:universal_pipe", "pipez:energy_pipe", "pipez:fluid_pipe", "pipez:item_pipe", "pipez:gas_pipe");
 
 		simpleSupport("laserio", "laserio:laser_connector", "laserio:laser_connector_advanced", "laserio:laser_node");
+		simpleSupport("replication", "replication:matter_network_pipe");
+		simpleSupport("oritech",
+			"oritech:transparent_item_pipe", "oritech:item_pipe", "oritech:framed_item_pipe", "oritech:item_pipe_duct_block",
+			"oritech:fluid_pipe", "oritech:framed_fluid_pipe", "oritech:fluid_pipe_duct_block",
+			"oritech:energy_pipe", "oritech:framed_energy_pipe", "oritech:energy_pipe_duct_block",
+			"oritech:superconductor", "oritech:framed_superconductor", "oritech:superconductor_duct_block"
+		);
 
+		simpleSupport("pneumaticcraft",
+			"pneumaticcraft:reinforced_pressure_tube",
+			"pneumaticcraft:advanced_pressure_tube",
+			"pneumaticcraft:pressure_tube"
+		);
 
 		support("xnet",
 			BlockList.of("xnet:netcable", "xnet:connector"),

@@ -1,7 +1,6 @@
 package com.davenonymous.pipegoggles;
 
 import com.davenonymous.pipegoggles.compat.AnnotationHelpers;
-import com.davenonymous.pipegoggles.compat.SpecialPipeHandler;
 import com.davenonymous.pipegoggles.compat.SpecialPipeHandlers;
 import com.davenonymous.pipegoggles.config.Config;
 import com.davenonymous.pipegoggles.setup.Registration;

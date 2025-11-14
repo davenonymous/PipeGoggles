@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "replication"
+    }
+  ],
+  "blocks": [
+    "replication:matter_network_pipe"
+  ],
+  "mod": "replication"
+}

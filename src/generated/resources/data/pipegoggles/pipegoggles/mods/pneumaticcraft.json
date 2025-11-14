@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "pneumaticcraft"
+    }
+  ],
+  "blocks": [
+    "pneumaticcraft:reinforced_pressure_tube",
+    "pneumaticcraft:advanced_pressure_tube",
+    "pneumaticcraft:pressure_tube"
+  ],
+  "mod": "pneumaticcraft"
+}
