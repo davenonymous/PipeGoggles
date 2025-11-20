@@ -1,7 +1,6 @@
 package com.davenonymous.pipegoggles.render;
 
 import com.davenonymous.pipegoggles.config.Client;
-import com.davenonymous.pipegoggles.data.cache.BoxOptimizer;
 import com.davenonymous.pipegoggles.lib.gui.GUIHelper;
 import com.davenonymous.pipegoggles.lib.gui.event.MouseClickEvent;
 import com.davenonymous.pipegoggles.lib.gui.event.WidgetEventResult;

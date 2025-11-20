@@ -75,6 +75,11 @@ public class BoxOptimizer {
 			cache.addBlock(support, pos, level);
 		});
 
+		for(DyeColor color : DyeColor.values()) {
+			var optimizer = getBoxLineCache(color);
+			optimizer.buildVBO();
+		}
+
 		lastUpdateTick = level.getGameTime();
 	}
 

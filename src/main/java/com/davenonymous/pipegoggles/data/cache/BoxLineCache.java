@@ -3,6 +3,11 @@ package com.davenonymous.pipegoggles.data.cache;
 import com.davenonymous.pipegoggles.compat.ISpecialPipeHandler;
 import com.davenonymous.pipegoggles.compat.SpecialPipeHandlers;
 import com.davenonymous.pipegoggles.data.GoggleSupport;
+import com.davenonymous.pipegoggles.items.PipeGoggleItem;
+import com.davenonymous.pipegoggles.render.BoxRenderer;
+import com.davenonymous.pipegoggles.render.OverlayLineRenderType;
+import com.mojang.blaze3d.vertex.*;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -20,6 +25,7 @@ import static com.davenonymous.pipegoggles.data.EnumBoxOptimizationStrategy.REMO
 
 public class BoxLineCache {
 	public DyeColor color;
+	public VertexBuffer vbo = null;
 
 	public Set<Line> lines = new HashSet<>();
 
@@ -29,6 +35,42 @@ public class BoxLineCache {
 
 	public void clear() {
 		this.lines.clear();
+		if(this.vbo != null) {
+			this.vbo.close();
+			this.vbo = null;
+		}
+	}
+
+	public void buildVBO() {
+		if(lines.isEmpty()) {
+			return;
+		}
+
+		ByteBufferBuilder byteBufferBuilder = new ByteBufferBuilder(OverlayLineRenderType.forThickness(1).bufferSize);
+		BufferBuilder bufferBuilder = new BufferBuilder(byteBufferBuilder, VertexFormat.Mode.LINES, DefaultVertexFormat.POSITION_COLOR_NORMAL);
+
+		var player = Minecraft.getInstance().player;
+		var optGoggleStack = PipeGoggleItem.getGoggleStack(player);
+		if (optGoggleStack.isEmpty()) {
+			return;
+		}
+
+		var goggleData = PipeGoggleItem.data(optGoggleStack.get());
+		if (goggleData.isDisabled()) {
+			return;
+		}
+
+		int colorInt = color.getTextColor() | goggleData.alpha() << 24;
+		BoxRenderer.createVBO(bufferBuilder, this.lines, colorInt);
+
+		MeshData meshData = bufferBuilder.build();
+		if(meshData != null) {
+			VertexBuffer modelVertexBuffer = new VertexBuffer(VertexBuffer.Usage.DYNAMIC);
+			modelVertexBuffer.bind();
+			modelVertexBuffer.upload(meshData);
+			VertexBuffer.unbind();
+			this.vbo = modelVertexBuffer;
+		}
 	}
 
 	public void addBlock(GoggleSupport support, BlockPos pos, Level level) {

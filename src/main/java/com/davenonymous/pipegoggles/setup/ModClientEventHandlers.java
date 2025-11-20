@@ -20,7 +20,7 @@ public class ModClientEventHandlers {
 
 	@SubscribeEvent
 	public static void onRenderLast(RenderLevelStageEvent event) {
-		if (event.getStage() == RenderLevelStageEvent.Stage.AFTER_WEATHER) {
+		if (event.getStage() == RenderLevelStageEvent.Stage.AFTER_PARTICLES) {
 			BoxRenderer.onRenderLast(event);
 		}
 	}

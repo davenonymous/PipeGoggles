@@ -25,22 +25,22 @@ Depending on the configuration of the mod your goggles will need to be powered t
 
 ## Supported mods (1.21.1):
 
-- Applied Energistics 2
-- Create
-- EnderIO
-- Flux Networks
-- IntegratedDynamics
-- LaserIO
-- Mekanism
-- Redstone (from vanilla minecraft)
-- Modern Industrialization
-- MoreRed
-- Oritech
-- Pipez
-- PneumaticCraft
-- Refined Storage
-- Replication
-- XNet
+*   Applied Energistics 2
+*   Create
+*   EnderIO
+*   Flux Networks
+*   IntegratedDynamics
+*   LaserIO
+*   Mekanism
+*   Redstone (from vanilla minecraft)
+*   Modern Industrialization
+*   MoreRed
+*   Oritech
+*   Pipez
+*   PneumaticCraft
+*   Refined Storage
+*   Replication
+*   XNet
 
 
 ## Supported mods (1.14):
